@@ -3,6 +3,7 @@ package com.example.meepmeep;
 import com.acmerobotics.roadrunner.Pose2d;
 import com.acmerobotics.roadrunner.SequentialAction;
 import com.acmerobotics.roadrunner.SleepAction;
+import com.acmerobotics.roadrunner.Vector2d;
 import com.noahbres.meepmeep.roadrunner.DefaultBotBuilder;
 import com.noahbres.meepmeep.roadrunner.entity.RoadRunnerBotEntity;
 
@@ -18,21 +19,20 @@ public class MeepMeep {
                 .build();
 
         myBot.runAction(myBot.getDrive().actionBuilder(new Pose2d(0, 0, Math.toRadians(0)))
-                .lineToX(30)
-                .waitSeconds(1)
-                .lineToX(0)
-//                .turn(Math.toRadians(90))
-//                .lineToY(30)
-//                .turn(Math.toRadians(90))
+//                .lineToX(30)
+//                .waitSeconds(1)
 //                .lineToX(0)
-//                .turn(Math.toRadians(90))
-//                .lineToY(0)
-//                .turn(Math.toRadians(90))
+                .strafeTo(new Vector2d(-60, -60))
+                .turn(Math.toRadians(90))
+                .strafeTo(new Vector2d(-48, -38))
+                .waitSeconds(2)
+                .strafeTo(new Vector2d(-60, -60))
+                .turn(Math.toRadians(135))
                 .build());
 
 
         meepMeep.setBackground(com.noahbres.meepmeep.MeepMeep.Background.FIELD_INTO_THE_DEEP_JUICE_LIGHT)
-                .setDarkMode(true)
+                .setDarkMode(false)
                 .setBackgroundAlpha(0.95f)
                 .addEntity(myBot)
                 .start();
