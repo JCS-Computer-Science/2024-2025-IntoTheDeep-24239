@@ -14,9 +14,9 @@ public class ExampleSystem {
     private Servo servo;
 
     public ExampleSystem(HardwareMap hardwareMap){
-
-        servo=hardwareMap.get(Servo.class,"servo");
+        servo=hardwareMap.get(Servo.class,"hand");
     }
+
 
     public class SetServo implements Action {
         private double position;
@@ -24,10 +24,12 @@ public class ExampleSystem {
         public SetServo(double position){
             this.position=position;
         }
+
         @Override
         public boolean run(@NonNull TelemetryPacket telemetryPacket) {
             if(!this.initialized){
                 servo.setPosition(position);
+
                 initialized=true;
             }
             return false;
