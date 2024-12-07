@@ -12,6 +12,7 @@ import org.firstinspires.ftc.teamcode.MecanumDrive;
 import org.firstinspires.ftc.teamcode.systems.Elevator;
 import org.firstinspires.ftc.teamcode.systems.ExampleSystem;
 import org.firstinspires.ftc.teamcode.systems.Swinger;
+import org.firstinspires.ftc.teamcode.systems.Wrist;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +26,8 @@ public class TeleOpWithActions extends OpMode {
     public ExampleSystem exampleSystem;
     public Swinger swinger;
 
+    public Wrist wrist;
+
     public Elevator elevator;
 
     @Override
@@ -35,6 +38,7 @@ public class TeleOpWithActions extends OpMode {
         exampleSystem = new ExampleSystem(hardwareMap);
         swinger = new Swinger(hardwareMap);
         elevator = new Elevator(hardwareMap);
+        wrist = new Wrist(hardwareMap);
 
         runningActions.add(drive.driveAction(driver));
     }
@@ -57,12 +61,12 @@ public class TeleOpWithActions extends OpMode {
         }
 
         if(operator.getButton(GamepadEx.Button.Y).justPressed) {
-            runningActions.add(exampleSystem.setServo(0.5));
+            runningActions.add(wrist.setServo(0.3));
         }
 
-//        if(operator.getButton(GamepadEx.Button.X).justPressed){
-//            runningActions.add(swinger.togglePosition());
-//        }
+        if(operator.getButton(GamepadEx.Button.X).justPressed){
+            runningActions.add(wrist.setServo(0));
+        }
 
         if(operator.getButton(GamepadEx.Button.DPAD_UP).isHeld){
             runningActions.add(swinger.setPosition(swinger.getTargetPosition()+5));

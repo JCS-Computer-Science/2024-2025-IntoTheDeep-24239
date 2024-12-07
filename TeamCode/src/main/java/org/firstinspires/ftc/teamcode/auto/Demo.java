@@ -9,13 +9,18 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 import org.firstinspires.ftc.teamcode.MecanumDrive;
 import org.firstinspires.ftc.teamcode.systems.ExampleSystem;
-
+import org.firstinspires.ftc.teamcode.systems.Swinger;
+import org.firstinspires.ftc.teamcode.systems.Elevator;
+import org.firstinspires.ftc.teamcode.systems.Wrist;
 @Autonomous(name="Demo Auto")
 public class Demo extends LinearOpMode {
     @Override
     public void runOpMode() throws InterruptedException {
         MecanumDrive drive = new MecanumDrive(hardwareMap, new Pose2d(20,60,Math.toRadians(-90)));
         ExampleSystem exampleSystem = new ExampleSystem(hardwareMap);
+        Swinger swinger = new Swinger(hardwareMap);
+        Elevator elevator = new Elevator(hardwareMap);
+        Wrist wrist = new Wrist(hardwareMap);
 
         waitForStart();
 
@@ -32,8 +37,31 @@ public class Demo extends LinearOpMode {
 //                .build()
 
         //set x -20 or 20, y 60, drg -90
-                        .waitSeconds(3)
-                .strafeToLinearHeading(new Vector2d(-60,60),Math.toRadians(-90))
+                        .stopAndAdd(exampleSystem.setServo(1))
+                        .stopAndAdd(wrist.setServo(0.3))
+                        .strafeToLinearHeading(new Vector2d(-55,-55), Math.toRadians(-135))
+                        .stopAndAdd(elevator.setPosition(14400))
+                        .stopAndAdd(swinger.setPosition(600))
+                        .stopAndAdd(exampleSystem.setServo(0))
+                        .strafeToLinearHeading(new Vector2d(-48,-40), Math.toRadians(90))
+                        .strafeToLinearHeading(new Vector2d(-48,-30), Math.toRadians(90))
+                        .waitSeconds(1)
+                        .strafeToLinearHeading(new Vector2d(-48,-40), Math.toRadians(90))
+                        .strafeToLinearHeading(new Vector2d(-55,-55), Math.toRadians(-135))
+                        .waitSeconds(2)
+                        .strafeToLinearHeading(new Vector2d(-58,-40), Math.toRadians(90))
+                        .strafeToLinearHeading(new Vector2d(-58,-30), Math.toRadians(90))
+                        .waitSeconds(1)
+                        .strafeToLinearHeading(new Vector2d(-58,-40), Math.toRadians(90))
+                        .strafeToLinearHeading(new Vector2d(-55,-55), Math.toRadians(-135))
+                        .waitSeconds(2)
+                        .strafeToLinearHeading(new Vector2d(-55,-25), Math.toRadians(180))
+                        .strafeToLinearHeading(new Vector2d(-62,-25), Math.toRadians(180))
+                        .waitSeconds(1)
+                        .strafeToLinearHeading(new Vector2d(-55,-55), Math.toRadians(-135))
+                        .waitSeconds(2)
+                        .strafeToLinearHeading(new Vector2d(60,-55), Math.toRadians(90))
+                        .strafeToLinearHeading(new Vector2d(60,-60), Math.toRadians(90))
 
 
         //set x -20 or 20, y -60, drg 90

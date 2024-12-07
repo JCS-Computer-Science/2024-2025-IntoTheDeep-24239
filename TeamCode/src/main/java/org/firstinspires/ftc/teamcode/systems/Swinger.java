@@ -61,10 +61,10 @@ public class Swinger {
         @Override
         public boolean run(@NonNull TelemetryPacket telemetryPacket) {
             if (!this.initialized) {
-                if (position >= 0 && position <= 2000) {
+                if (position >= 0 && position <= 900) {
                     motor.setTargetPosition(position);
                     motor.setMode(DcMotorEx.RunMode.RUN_TO_POSITION);
-                    motor.setPower(2);
+                    motor.setPower(2.0);
                 }
                 initialized = true;
                 telemetryPacket.addLine("moving to position "+position);

@@ -19,7 +19,7 @@ public class MeepMeep {
                 .setConstraints(60, 60, Math.toRadians(180), Math.toRadians(180), 15)
                 .build();
 
-        myBot.runAction(myBot.getDrive().actionBuilder(new Pose2d(20, 60, Math.toRadians(-90)))
+        myBot.runAction(myBot.getDrive().actionBuilder(new Pose2d(-20, -60, Math.toRadians(90)))
                 //MeepMeep Demo
                 //set X position to 0, set Y posistion to 0
 //                .lineToX(30)
@@ -27,88 +27,71 @@ public class MeepMeep {
 //                .lineToX(0)
 
                 //set x -20 or 20, y 60, drg -90
-                .waitSeconds(3)
-                .strafeToLinearHeading(new Vector2d(-60,60),Math.toRadians(-90))
+//                .waitSeconds(3)
+//                .strafeToLinearHeading(new Vector2d(-60,60),Math.toRadians(-90))
 
 
                 //set x -20 or 20, y -60, drg 90
 //                .waitSeconds(3)
 //                .strafeToLinearHeading(new Vector2d(60,-60),Math.toRadians(-90))
 
-                //Plan Name: A
-                //set X position to 20, set Y posistion to -60, rotate to 180
+//                Plan Name: A
+//                set X position to 20, set Y posistion to -60, rotate to 180
 
-//                .strafeToLinearHeading(new Vector2d(-55,-55), Math.toRadians(-135))
-//                .waitSeconds(3)
-//                .strafeToLinearHeading(new Vector2d(-48,-40), Math.toRadians(90))
-//                .waitSeconds(2)
-//                .strafeToLinearHeading(new Vector2d(-55,-55), Math.toRadians(-135))
-//                .waitSeconds(3)
-//                .strafeToLinearHeading(new Vector2d(-58,-40), Math.toRadians(90))
-//                .waitSeconds(2)
-//                .strafeToLinearHeading(new Vector2d(-55,-55), Math.toRadians(-135))
-//                .waitSeconds(3)
-//                .strafeToLinearHeading(new Vector2d(-55,-25), Math.toRadians(180))
-//                .waitSeconds(2)
-//                .strafeToLinearHeading(new Vector2d(-55,-55), Math.toRadians(-135))
-//                .waitSeconds(3)
-//                .strafeToLinearHeading(new Vector2d(-25,-5), Math.toRadians(90))
+                .strafeToLinearHeading(new Vector2d(-55,-55), Math.toRadians(-135))
+                .waitSeconds(2)
+                .strafeToLinearHeading(new Vector2d(-48,-40), Math.toRadians(90))
+                .strafeToLinearHeading(new Vector2d(-48,-30), Math.toRadians(90))
+                .waitSeconds(1)
+                .strafeToLinearHeading(new Vector2d(-48,-40), Math.toRadians(90))
+                .strafeToLinearHeading(new Vector2d(-55,-55), Math.toRadians(-135))
+                .waitSeconds(2)
+                .strafeToLinearHeading(new Vector2d(-58,-40), Math.toRadians(90))
+                .strafeToLinearHeading(new Vector2d(-58,-30), Math.toRadians(90))
+                .waitSeconds(1)
+                .strafeToLinearHeading(new Vector2d(-58,-40), Math.toRadians(90))
+                .strafeToLinearHeading(new Vector2d(-55,-55), Math.toRadians(-135))
+                .waitSeconds(2)
+                .strafeToLinearHeading(new Vector2d(-55,-25), Math.toRadians(180))
+                .strafeToLinearHeading(new Vector2d(-62,-25), Math.toRadians(180))
+                .waitSeconds(1)
+                .strafeToLinearHeading(new Vector2d(-55,-55), Math.toRadians(-135))
+                .waitSeconds(2)
+                .strafeToLinearHeading(new Vector2d(60,-55), Math.toRadians(90))
+                .strafeToLinearHeading(new Vector2d(60,-60), Math.toRadians(90))
 
-                //Plan name: B
-                //set X position to -20, set Y posistion to -60, rotate to 180
-//                .strafeToLinearHeading(new Vector2d(-55,-55), Math.toRadians(-135))
-//                .waitSeconds(3)
-//                .strafeToLinearHeading(new Vector2d(-48,-40), Math.toRadians(90))
-//                .waitSeconds(2)
-//                .strafeToLinearHeading(new Vector2d(-55,-55), Math.toRadians(-135))
-//                .waitSeconds(3)
-//                .strafeToLinearHeading(new Vector2d(-58,-40), Math.toRadians(90))
-//                .waitSeconds(2)
-//                .strafeToLinearHeading(new Vector2d(-55,-55), Math.toRadians(-135))
-//                .waitSeconds(3)
-//                .strafeToLinearHeading(new Vector2d(-55,-25), Math.toRadians(180))
-//                .waitSeconds(2)
-//                .strafeToLinearHeading(new Vector2d(-55,-55), Math.toRadians(-135))
-//                .waitSeconds(3)
-//                .strafeToLinearHeading(new Vector2d(-25,-5), Math.toRadians(90))
-                
 
-                //Plan C
-                //Set X position to -20, set Y posistion to 60, rotate to 0
-//                .strafeToLinearHeading(new Vector2d(55,55), Math.toRadians(45))
-//                .waitSeconds(3)
-//                .strafeToLinearHeading(new Vector2d(48,40), Math.toRadians(-90))
-//                .waitSeconds(2)
-//                .strafeToLinearHeading(new Vector2d(55,55), Math.toRadians(45))
-//                .waitSeconds(3)
-//                .strafeToLinearHeading(new Vector2d(58,40), Math.toRadians(-90))
-//                .waitSeconds(2)
-//                .strafeToLinearHeading(new Vector2d(55,55), Math.toRadians(45))
-//                .waitSeconds(3)
-//                .strafeToLinearHeading(new Vector2d(55,25), Math.toRadians(0))
-//                .waitSeconds(2)
-//                .strafeToLinearHeading(new Vector2d(55,55), Math.toRadians(45))
-//                .waitSeconds(3)
-//                .strafeToLinearHeading(new Vector2d(25,5), Math.toRadians(-90))
-
-                //Plan D
-                //Set X position to 20, set Y posistion to 60, rotate to 0
-//                .strafeToLinearHeading(new Vector2d(55,55), Math.toRadians(45))
-//                .waitSeconds(3)
-//                .strafeToLinearHeading(new Vector2d(48,40), Math.toRadians(-90))
-//                .waitSeconds(2)
-//                .strafeToLinearHeading(new Vector2d(55,55), Math.toRadians(45))
-//                .waitSeconds(3)
-//                .strafeToLinearHeading(new Vector2d(58,40), Math.toRadians(-90))
-//                .waitSeconds(2)
-//                .strafeToLinearHeading(new Vector2d(55,55), Math.toRadians(45))
-//                .waitSeconds(3)
-//                .strafeToLinearHeading(new Vector2d(55,25), Math.toRadians(0))
-//                .waitSeconds(2)
-//                .strafeToLinearHeading(new Vector2d(55,55), Math.toRadians(45))
-//                .waitSeconds(3)
-//                .strafeToLinearHeading(new Vector2d(25,5), Math.toRadians(-90))
-
+//                plan B
+//                .strafeToLinearHeading(new Vector2d(20,-40), Math.toRadians(270))
+//                .strafeToLinearHeading(new Vector2d(55,-40), Math.toRadians(270))
+//                .strafeToLinearHeading(new Vector2d(55,-55), Math.toRadians(270))
+//                .strafeToLinearHeading(new Vector2d(36,-30), Math.toRadians(270))
+//                .strafeToLinearHeading(new Vector2d(36,-10), Math.toRadians(270))
+//                .strafeToLinearHeading(new Vector2d(45,-10), Math.toRadians(180))
+//                .strafeToLinearHeading(new Vector2d(45,-55), Math.toRadians(180))
+//                .strafeToLinearHeading(new Vector2d(45,-10), Math.toRadians(180))
+//                .strafeToLinearHeading(new Vector2d(55,-10), Math.toRadians(180))
+//                .strafeToLinearHeading(new Vector2d(55,-55), Math.toRadians(180))
+//                .strafeToLinearHeading(new Vector2d(55,-10), Math.toRadians(180))
+//                .strafeToLinearHeading(new Vector2d(64,-10), Math.toRadians(180))
+//                .strafeToLinearHeading(new Vector2d(64,-55), Math.toRadians(180))
+//                .strafeToLinearHeading(new Vector2d(34,-55), Math.toRadians(270))
+//                .waitSeconds(1)
+//                .strafeToLinearHeading(new Vector2d(-10,-36), Math.toRadians(90))
+//                .waitSeconds(1)
+//                .strafeToLinearHeading(new Vector2d(30,-60), Math.toRadians(270))
+//                .waitSeconds(1)
+//                .strafeToLinearHeading(new Vector2d(-5,-36), Math.toRadians(90))
+//                .waitSeconds(1)
+//                .strafeToLinearHeading(new Vector2d(32,-60), Math.toRadians(270))
+//                .waitSeconds(1)
+//                .strafeToLinearHeading(new Vector2d(-0,-36), Math.toRadians(90))
+//                .waitSeconds(1)
+//                .strafeToLinearHeading(new Vector2d(36,-60), Math.toRadians(270))
+//                .waitSeconds(1)
+//                .strafeToLinearHeading(new Vector2d(5,-36), Math.toRadians(90))
+//                .waitSeconds(1)
+//                .strafeToLinearHeading(new Vector2d(60,-60), Math.toRadians(90))
 
 //                .turn(Math.toRadians(90))
 //                .lineToY(30)
