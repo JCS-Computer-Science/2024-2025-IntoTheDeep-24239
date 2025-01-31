@@ -57,43 +57,43 @@ public class TeleOpWithActions extends OpMode {
         packet.put("elevatorPosition", elevator.getPosition());
 
         //add actions as needed here, eg:
-        if(operator.getButton(GamepadEx.Button.A).justPressed){
+        if(driver.getButton(GamepadEx.Button.A).justPressed){
             runningActions.add(exampleSystem.setServo(1));
         }
 
-        if(operator.getButton(GamepadEx.Button.B).justPressed){
+        if(driver.getButton(GamepadEx.Button.B).justPressed){
             runningActions.add(exampleSystem.setServo(0));
         }
 
-        if(operator.getButton(GamepadEx.Button.Y).justPressed) {
+        if(driver.getButton(GamepadEx.Button.Y).justPressed) {
             runningActions.add(handOne.setServo(1));
         }
 
-        if(operator.getButton(GamepadEx.Button.X).justPressed){
+        if(driver.getButton(GamepadEx.Button.X).justPressed){
             runningActions.add(handOne.setServo(0));
         }
 
-        if(operator.getButton(GamepadEx.Button.RIGHT_BUMPER).justPressed){
+        if(driver.getButton(GamepadEx.Button.RIGHT_BUMPER).justPressed){
             runningActions.add(handTwo.setServo(1));
         }
 
-        if(operator.getButton(GamepadEx.Button.LEFT_BUMPER).justPressed){
+        if(driver.getButton(GamepadEx.Button.LEFT_BUMPER).justPressed){
             runningActions.add(handTwo.setServo(0));
         }
 
-        if(operator.getButton(GamepadEx.Button.DPAD_UP).justPressed){
+        if(driver.getButton(GamepadEx.Button.DPAD_UP).justPressed){
             runningActions.add(swinger.setPosition(swinger.UP_TICKS));
         }
         
-        if(operator.getButton(GamepadEx.Button.DPAD_DOWN).justPressed){
+        if(driver.getButton(GamepadEx.Button.DPAD_DOWN).justPressed){
             runningActions.add(swinger.setPosition(swinger.DOWN_TICKS));
         }
 
-        if(operator.getButton(GamepadEx.Button.DPAD_RIGHT).isHeld){
+        if(driver.getButton(GamepadEx.Button.DPAD_RIGHT).isHeld){
             runningActions.add(elevator.setPosition(elevator.OUT_TICKS));
         }
 
-        if(operator.getButton(GamepadEx.Button.DPAD_LEFT).isHeld){
+        if(driver.getButton(GamepadEx.Button.DPAD_LEFT).isHeld){
             runningActions.add(elevator.setPosition(elevator.IN_TICKS));
         }
 

@@ -10,7 +10,7 @@ import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.PIDFCoefficients;
 
 public class Swinger {
-    public int UP_TICKS = -850;
+    public int UP_TICKS = -830;
     public int DOWN_TICKS = 105;
 
     private int ADD_TICKS = 0;
@@ -42,7 +42,7 @@ public class Swinger {
                         motor.setTargetPosition(UP_TICKS);
 
                         motor.setMode(DcMotorEx.RunMode.RUN_TO_POSITION);
-                        motor.setPower(0.8);
+                        motor.setPower(0.6);
 
                 }
                 return false;

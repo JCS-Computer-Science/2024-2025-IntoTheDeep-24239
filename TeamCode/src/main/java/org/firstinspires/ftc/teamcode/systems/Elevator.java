@@ -10,8 +10,8 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class Elevator {
-    public int OUT_TICKS = 5680;
-    public int IN_TICKS = 4657;
+    public int OUT_TICKS = 6600;
+    public int IN_TICKS = 4720;
 
     private DcMotorEx motor;
     private DcMotorEx motor2;
