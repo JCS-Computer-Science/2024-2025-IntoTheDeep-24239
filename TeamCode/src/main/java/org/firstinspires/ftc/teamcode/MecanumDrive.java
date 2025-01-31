@@ -409,8 +409,8 @@ public final class MecanumDrive {
         public boolean run(@NonNull TelemetryPacket telemetryPacket) {
             setDrivePowers(new PoseVelocity2d(
                     new Vector2d(
-                            -driver.gamepad.left_stick_y,
-                            -driver.gamepad.left_stick_x
+                            driver.gamepad.left_stick_y,
+                            driver.gamepad.left_stick_x
                     ),
                     -driver.gamepad.right_stick_x
             ));

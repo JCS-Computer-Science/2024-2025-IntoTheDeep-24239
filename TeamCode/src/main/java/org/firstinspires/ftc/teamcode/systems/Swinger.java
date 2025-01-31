@@ -10,8 +10,8 @@ import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.PIDFCoefficients;
 
 public class Swinger {
-    private int UP_TICKS = 1800;
-    private int DOWN_TICKS = 50;
+    public int UP_TICKS = -850;
+    public int DOWN_TICKS = 105;
 
     private int ADD_TICKS = 0;
 
@@ -61,10 +61,10 @@ public class Swinger {
         @Override
         public boolean run(@NonNull TelemetryPacket telemetryPacket) {
             if (!this.initialized) {
-                if (position >= 0 && position <= 900) {
+                if (position >= UP_TICKS && position <= DOWN_TICKS) {
                     motor.setTargetPosition(position);
                     motor.setMode(DcMotorEx.RunMode.RUN_TO_POSITION);
-                    motor.setPower(2.0);
+                    motor.setPower(0.7);
                 }
                 initialized = true;
                 telemetryPacket.addLine("moving to position "+position);

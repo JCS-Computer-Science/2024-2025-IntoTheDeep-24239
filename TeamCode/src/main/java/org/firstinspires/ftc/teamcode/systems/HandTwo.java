@@ -7,13 +7,13 @@ import com.acmerobotics.roadrunner.Action;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 
-public class Wrist {
+public class HandTwo {
 
 
     private Servo servo;
 
-    public Wrist(HardwareMap hardwareMap){
-        servo=hardwareMap.get(Servo.class,"wrist");
+    public HandTwo(HardwareMap hardwareMap){
+        servo=hardwareMap.get(Servo.class,"handTwo");
     }
 
 
